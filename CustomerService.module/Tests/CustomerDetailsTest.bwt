@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emulation:EmulationData xmlns:emulation="http:///emulation.ecore" isBW="true" location="/CustomerService.module/Tests/CustomerDetailsTest.bwt">
+  <ProcessNode Id="customerservice.module.db.GetCutomerDetails" Name="customerservice.module.db.GetCutomerDetails" ModelType="BW" moduleName="CustomerService.module">
+    <Assertion Id="95b2cf5f-d05e-421b-b4cd-15f02b0c65f6" Name="JDBCQuery" hasDecoration="true">
+      <Lang>urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0</Lang>
+      <Expression>
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;JDBCQuery&quot;/>&lt;xsl:template match=&quot;/&quot;>&lt;xsl:choose>&lt;xsl:when test=&quot;$JDBCQuery/Record[1]/account_id=16796&quot;>&lt;result status=&quot;passed&quot; message=&quot;Assertion passed.&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;result status=&quot;failed&quot; message=&quot;Assertion failed.&quot;/>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/xsl:template>&lt;/xsl:stylesheet></Expression>
+      <OriginalExpression>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;JDBCQuery&quot;/>&lt;xsl:template name=&quot;&quot; match=&quot;/&quot;>&lt;Primitive-Assertion>&lt;AssertType>&lt;int>&lt;testInput>&lt;xsl:value-of select=&quot;$JDBCQuery/Record[1]/account_id&quot;/>&lt;/testInput>&lt;goldInput>&lt;xsl:value-of select=&quot;16796&quot;/>&lt;/goldInput>&lt;/int>&lt;/AssertType>&lt;/Primitive-Assertion>&lt;/xsl:template>&lt;/xsl:stylesheet></OriginalExpression>
+    </Assertion>
+    <Operation Name="callProcess" serviceName="customerservice.module.db.GetCutomerDetails">
+      <Inputs Id="5318ca14-7a1b-4d64-9241-30b2ffa4d7d0CustomerService.module_customerservice.module.db.GetCutomerDetails_callProcess_Start" Name="Start" isDefault="true" type="CALLPROCESS">
+        <informations Name="input" nameSpace="http://xmlns.example.com/CustomerAccountDetails/parameters">
+          <nameSpaces prefix="tns" nameSapce="http://xmlns.example.com/CustomerAccountDetails/parameters"/>
+          <Parameter Name="tns:customer-accountdetailsGetParameters">
+            <parameters Name="tns:id" Value="1" type="integer" nameSpace="http://xmlns.example.com/CustomerAccountDetails/parameters"/>
+          </Parameter>
+        </informations>
+      </Inputs>
+      <resolvedInput inputValue="&lt;tns:customer-accountdetailsGetParameters xmlns:tns='http://xmlns.example.com/CustomerAccountDetails/parameters' >&lt;tns:id>1&lt;/tns:id>&lt;/tns:customer-accountdetailsGetParameters>"/>
+    </Operation>
+  </ProcessNode>
+</emulation:EmulationData>

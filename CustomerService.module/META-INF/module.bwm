@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:property="http://ns.tibco.com/bw/property" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_OD4XkGBrEeeuL9GFFVgdQQ" targetNamespace="http://tns.tibco.com/bw/composite/CustomerService.module" name="CustomerService.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_yXWJomBrEeeuL9GFFVgdQQ" name="customer-accountdetails" promote="ComponentProcess/customer-accountdetails">
+    <sca:interface.wsdl xmi:id="_yXWJpmBrEeeuL9GFFVgdQQ" interface="http://xmlns.example.com/20170703234528PLT#wsdl.interface(customer-accountdetails)"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_yXWwsGBrEeeuL9GFFVgdQQ" name="RestService" path="/customer/{id}/accountdetails" docBasePath="http://localhost:7777/CustomerService.module" docResourcePath="CustomerAccountDetails" basePath="/" connector="customerservice.module.CustomerService" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/customerservice.module.Process-CustomerAccountDetails.json">
+      <operation xmi:id="_yXWwsWBrEeeuL9GFFVgdQQ" operationName="get" nickname="get-customer-accountdetails" httpMethod="GET" responseStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_yXodgGBrEeeuL9GFFVgdQQ">
+        <parameterMapping xmi:id="_yXodgWBrEeeuL9GFFVgdQQ" parameterName="id" parameterType="Path" required="true"/>
+      </parameters>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_yXWwsmBrEeeuL9GFFVgdQQ" bindingName="RestService"/>
+  </sca:service>
+  <sca:service xmi:id="_aSpf4mB-EeeuL9GFFVgdQQ" name="customer" promote="ComponentCustomer/customer">
+    <sca:interface.wsdl xmi:id="_aSqG8mB-EeeuL9GFFVgdQQ" interface="http://xmlns.example.com/20170704020144PLT#wsdl.interface(customer)"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_aSqG82B-EeeuL9GFFVgdQQ" name="RestService1" path="/customer/{id}" docBasePath="http://localhost:7777/CustomerService.module" docResourcePath="Customer" basePath="/" connector="customerservice.module.CustomerService" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/customerservice.module.Customer-Customer.json">
+      <operation xmi:id="_aSquAGB-EeeuL9GFFVgdQQ" operationName="get" nickname="get-customer" httpMethod="GET" responseStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_aS4JYGB-EeeuL9GFFVgdQQ">
+        <parameterMapping xmi:id="_aS4JYWB-EeeuL9GFFVgdQQ" parameterName="id" parameterType="Path" required="true"/>
+      </parameters>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_aSquAWB-EeeuL9GFFVgdQQ" bindingName="RestService1"/>
+  </sca:service>
+  <sca:property xmi:id="_OLQK4GBrEeeuL9GFFVgdQQ" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_OL4dAGBrEeeuL9GFFVgdQQ" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_OMYzUGBrEeeuL9GFFVgdQQ" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_OM5JoGBrEeeuL9GFFVgdQQ" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_ONaHAGBrEeeuL9GFFVgdQQ" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_ON6dUGBrEeeuL9GFFVgdQQ" name="BW.CLOUD.PORT" type="XMLSchema:int" scalable="true"/>
+  <sca:property xmi:id="_OObasGBrEeeuL9GFFVgdQQ" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_xpz4wGBsEeeuL9GFFVgdQQ" name="DB_URL" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_x_ZuQGBsEeeuL9GFFVgdQQ" name="DB_USER" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_yFKYAGBsEeeuL9GFFVgdQQ" name="DB_PASS" type="property:password" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_gEYIgAczEeiW8JNKpRtzXg" name="CLIENT_SERVICE" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_OGQ9MGBrEeeuL9GFFVgdQQ" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_OGQ9MWBrEeeuL9GFFVgdQQ" processName="customerservice.module.CustomerAccount"/>
+    <sca:service xmi:id="_yXWJoGBrEeeuL9GFFVgdQQ" name="customer-accountdetails">
+      <sca:interface.wsdl xmi:id="_yXWJoWBrEeeuL9GFFVgdQQ" interface="http://xmlns.example.com/20170703234528PLT#wsdl.interface(customer-accountdetails)"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_QdTLYGB-EeeuL9GFFVgdQQ" name="ComponentCustomer" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_QdTLYWB-EeeuL9GFFVgdQQ" processName="customerservice.module.Customer"/>
+    <sca:service xmi:id="_aSpf4GB-EeeuL9GFFVgdQQ" name="customer">
+      <sca:interface.wsdl xmi:id="_aSpf4WB-EeeuL9GFFVgdQQ" interface="http://xmlns.example.com/20170704020144PLT#wsdl.interface(customer)"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_RO3BwGFbEeeJr9W980jQ1Q" name="ComponentActivator" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_RO3BwWFbEeeJr9W980jQ1Q" processName="customerservice.module.Activator"/>
+  </sca:component>
+</sca:composite>

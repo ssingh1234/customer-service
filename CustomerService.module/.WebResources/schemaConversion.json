@@ -1,0 +1,27 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/CustomerService.module/Service Descriptors/customerservice.module.Process-Customer.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.com/namespaces/tns/1499063749380"
+    },
+    {
+        "jsonSchemaLocation": "/CustomerService.module/Service Descriptors/customerservice.module.Customer-Customer.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.com/namespaces/tns/1499098947302"
+    },
+    {
+        "jsonSchemaLocation": "/CustomerService.module/Service Descriptors/customerservice.module.Process-CustomerAccount.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/AccountDetails"
+    },
+    {
+        "jsonSchemaLocation": "/CustomerService.module/Service Descriptors/customerservice.module.Process-CustomerAccountDetails.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.com/namespaces/tns/1499139982005"
+    },
+    {
+        "jsonSchemaLocation": "/CustomerService.module/Service Descriptors/customerservice.module.Customer-Customer.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.com/namespaces/tns/1499141585825"
+    }
+]}

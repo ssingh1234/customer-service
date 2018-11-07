@@ -1,0 +1,54 @@
+<process-dir height="302" id="customerservice.module.Activator" name="customerservice.module.Activator" type="process" width="694" x="140" y="20">
+<partnerLinks>
+<partner-link id="ModuleActivator" myRole="use" name="ModuleActivator" partnerLinkType="partnerLinkType"/>
+</partnerLinks>
+<ProcessInfo createdBy="tibco" createdOn="Wed Jul 05 04:23:48 EDT 2017" description="" modifiedBy="" modifiedOn="" modifiers="public" productVersion="2.3.0 V29 2017-05-09" scalable="true" singleton="true" stateless="true" type="IT"/>
+<pick collapse="false" createInstance="true" height="196" id="d3174775-a7b8-480d-81c3-05f6f0a0a4a8" name="pick" type="pick" width="542" x="76" y="44">
+<on-message height="155" id="a6acea96-e562-47ae-95b6-7d89e2de098f" input="true" operation="onStartup" partner-link="ModuleActivator" portType="ModuleActivator" type="onMessage" variable="onStartup" width="524" x="9" y="11">
+<activity-dir height="16" id="cace36bb-b2b0-40b5-a0bf-365d3bc88042" name="OnMessageStart" type="onMessageStart" width="16" x="-19" y="63"/>
+<link-dir id="47179fbc-ba2f-493d-a072-e68c185ab63b" label="" linkType="SUCCESS" name="drop_customersToSQLDirect" points="[[117,70],[201,70]]" source="9f4daaa5-eee4-4b4b-9471-f8d97e4ab791" target="4f93e45d-5fb1-4856-98e9-75e8da2fe1be"/>
+<activity-dir height="48" id="9f4daaa5-eee4-4b4b-9471-f8d97e4ab791" name="drop_customers" type="bw.jdbc.SQLDirect" width="48" x="68" y="46">
+<inputBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+9f4daaa5-eee4-4b4b-9471-f8d97e4ab791+input&quot; version=&quot;2.0&quot;&gt;&lt;xsl:template name=&quot;drop_customers-input&quot; match=&quot;/&quot;&gt;&lt;tns:ActivityInputType&gt;&lt;statement&gt;&lt;xsl:value-of select=&quot;&amp;quot;DROP TABLE IF EXISTS public.customers&amp;quot;&quot;/&gt;&lt;/statement&gt;&lt;/tns:ActivityInputType&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;"/>
+<partBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+9f4daaa5-eee4-4b4b-9471-f8d97e4ab791+input&quot; version=&quot;2.0&quot;&gt;&lt;xsl:template name=&quot;drop_customers-input&quot; match=&quot;/&quot;&gt;&lt;tns:ActivityInputType&gt;&lt;statement&gt;&lt;xsl:value-of select=&quot;&amp;quot;DROP TABLE IF EXISTS public.customers&amp;quot;&quot;/&gt;&lt;/statement&gt;&lt;/tns:ActivityInputType&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;"/>
+<BWActivity activityTypeID="bw.jdbc.SQLDirect">
+<activityConfig>
+<properties name="config" type="activityconfig:EMFProperty">
+<type href="http://ns.tibco.com/bw/palette/jdbc#//SQLDirectActivity"/>
+<value maxRows="100" sharedResourceProperty="jdbcProperty" timeout="10" type="jdbcPalette:SQLDirectActivity"/>
+</properties>
+</activityConfig>
+</BWActivity>
+</activity-dir>
+<link-dir id="52aee356-d5ec-42f8-8d87-8b13df506eea" label="" linkType="SUCCESS" name="create_customersToSQLDirect" points="[[250,70],[339,70]]" source="4f93e45d-5fb1-4856-98e9-75e8da2fe1be" target="003c1024-e2f2-4dcb-bc1f-46526f5d954f"/>
+<activity-dir height="48" id="4f93e45d-5fb1-4856-98e9-75e8da2fe1be" name="create_customers" type="bw.jdbc.SQLDirect" width="48" x="201" y="46">
+<inputBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+4f93e45d-5fb1-4856-98e9-75e8da2fe1be+input&quot; version=&quot;2.0&quot;&gt;&lt;xsl:template name=&quot;create_customers-input&quot; match=&quot;/&quot;&gt;&lt;tns:ActivityInputType&gt;&lt;statement&gt;&lt;xsl:value-of select=&quot;&amp;quot;CREATE TABLE IF NOT EXISTS public.customers(id integer NOT NULL, name text, email text, account_id integer, PRIMARY KEY (id))WITH (OIDS = FALSE)&amp;quot;&quot;/&gt;&lt;/statement&gt;&lt;/tns:ActivityInputType&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;"/>
+<partBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+4f93e45d-5fb1-4856-98e9-75e8da2fe1be+input&quot; version=&quot;2.0&quot;&gt;&lt;xsl:template name=&quot;create_customers-input&quot; match=&quot;/&quot;&gt;&lt;tns:ActivityInputType&gt;&lt;statement&gt;&lt;xsl:value-of select=&quot;&amp;quot;CREATE TABLE IF NOT EXISTS public.customers(id integer NOT NULL, name text, email text, account_id integer, PRIMARY KEY (id))WITH (OIDS = FALSE)&amp;quot;&quot;/&gt;&lt;/statement&gt;&lt;/tns:ActivityInputType&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;"/>
+<BWActivity activityTypeID="bw.jdbc.SQLDirect">
+<activityConfig>
+<properties name="config" type="activityconfig:EMFProperty">
+<type href="http://ns.tibco.com/bw/palette/jdbc#//SQLDirectActivity"/>
+<value maxRows="100" sharedResourceProperty="jdbcProperty" timeout="10" type="jdbcPalette:SQLDirectActivity"/>
+</properties>
+</activityConfig>
+</BWActivity>
+</activity-dir>
+<activity-dir height="48" id="003c1024-e2f2-4dcb-bc1f-46526f5d954f" name="seed_customers" type="bw.jdbc.SQLDirect" width="48" x="339" y="46">
+<inputBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+003c1024-e2f2-4dcb-bc1f-46526f5d954f+input&quot; version=&quot;2.0&quot;&gt;&lt;xsl:template name=&quot;seed_customers-input&quot; match=&quot;/&quot;&gt;&lt;tns:ActivityInputType&gt;&lt;statement&gt;&lt;xsl:value-of select=&quot;&amp;quot;INSERT INTO public.customers(id, name, email, account_id) VALUES   (1,'Nevins Nathon','nnathon0@miibeian.gov.cn',16796),(2,'Frederik Crome','fcrome1@virginia.edu',41175),(3,'Abelard Founds','afounds2@smh.com.au',64163),(4,'Lilla Rusling','lrusling3@behance.net',84084),(5,'Ailyn Casham','acasham4@bbc.co.uk',26124)&amp;quot;&quot;/&gt;&lt;/statement&gt;&lt;/tns:ActivityInputType&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;"/>
+<partBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+003c1024-e2f2-4dcb-bc1f-46526f5d954f+input&quot; version=&quot;2.0&quot;&gt;&lt;xsl:template name=&quot;seed_customers-input&quot; match=&quot;/&quot;&gt;&lt;tns:ActivityInputType&gt;&lt;statement&gt;&lt;xsl:value-of select=&quot;&amp;quot;INSERT INTO public.customers(id, name, email, account_id) VALUES   (1,'Nevins Nathon','nnathon0@miibeian.gov.cn',16796),(2,'Frederik Crome','fcrome1@virginia.edu',41175),(3,'Abelard Founds','afounds2@smh.com.au',64163),(4,'Lilla Rusling','lrusling3@behance.net',84084),(5,'Ailyn Casham','acasham4@bbc.co.uk',26124)&amp;quot;&quot;/&gt;&lt;/statement&gt;&lt;/tns:ActivityInputType&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;"/>
+<BWActivity activityTypeID="bw.jdbc.SQLDirect">
+<activityConfig>
+<properties name="config" type="activityconfig:EMFProperty">
+<type href="http://ns.tibco.com/bw/palette/jdbc#//SQLDirectActivity"/>
+<value maxRows="100" sharedResourceProperty="jdbcProperty" timeout="10" type="jdbcPalette:SQLDirectActivity"/>
+</properties>
+</activityConfig>
+</BWActivity>
+</activity-dir>
+<activity-dir height="16" id="e8edbd4e-1026-4611-b2ce-c333175e3313" name="OnMessageEnd" type="onMessageEnd" width="16" x="522" y="63"/>
+</on-message>
+<on-message collapse="true" height="21" id="f7990952-63d3-44b7-836e-bb4042a0382e" input="true" operation="onShutdown" partner-link="ModuleActivator" portType="ModuleActivator" type="onMessage" variable="onShutdown" width="524" x="9" y="166">
+<activity-dir height="16" id="13a82352-70d8-4d3b-9909-e3ca80b1a8d2" name="OnMessageStart1" type="onMessageStart" width="16" x="-19" y="63"/>
+<activity-dir height="16" id="bba2ccf2-214c-4b7f-b808-2a2d90f3c0c6" name="OnMessageEnd1" type="onMessageEnd" width="16" x="522" y="63"/>
+</on-message>
+</pick>
+</process-dir>

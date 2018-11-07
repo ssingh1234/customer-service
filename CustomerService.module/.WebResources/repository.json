@@ -1,0 +1,25 @@
+{
+    "records": [],
+    "resources": [
+        {
+            "location": "Service Descriptors/customerservice.module.Process-Customer.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/customerservice.module.Customer-Customer.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/customerservice.module.Process-CustomerAccount.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/customerservice.module.Process-CustomerAccountDetails.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/customerservice.module.CustomerAccount-CustomerAccountDetails.json",
+            "type": "generated"
+        }
+    ]
+}
